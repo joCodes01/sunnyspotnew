@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+
+} 
+.pagecontent{
+    margin-bottom: 5rem;
+    /* border:2px solid red;  */
+    
+
+}
+.navbar{
+    display: flex;  
+    border-bottom: 1px solid gray;
+    padding:2rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.navlogo{
+    max-width: 150px;  
+}
+.navmenuitems{
+    display: flex;
+    margin-left: auto;
+}
+.navmenuitems li{
+    list-style: none;
+    margin-left: 1.5rem;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    max-width: 100%;
+    font-size: .7rem;
+    font-weight: 400;
+}
+.footer{
+    position:fixed;  
+    bottom: 0px;
+    width: 100%; 
+    background-color: grey;
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex;
+}
+.footer a{
+    align-self: flex-end;
+    margin-left: auto;
+    color: white;
+    text-decoration: none;
+    
+}
+.allcabins-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+    filter: drop-shadow(2px 2px 2px #909090);
+    margin-top: 2rem;
+    max-width: 60%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+    overflow:  hidden;
+}
+
+.cabinimage-container{
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.cabinimage{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;   
+}
+#cabinimageupload{
+    width: 100%;
+    /* max-width: 100px; */
+    height: auto;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;   
+}
+
+.cabin-container{
+    padding: 1rem;
+} 
+.cabintype{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+.price{
+    margin-top: 1rem;
+}
+.db-message{
+    padding-left: 2rem;
+}
+
+/* Admin */
+
+.admin-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.admin-content{
+    padding: 2rem;
+}
+.admin-content div{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.admin-content label{
+    font-weight: 800;
+    margin-bottom: .2rem;
+}
+#admin-image-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#editcabin-title{
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+#tester {
+    background-color: pink;
+}
+
+.admin-grid-container .pagecontent {
+    /* border: 1px solid red; */
+    max-height: 110vh;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+
+}
