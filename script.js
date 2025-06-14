@@ -1,28 +1,28 @@
 
-console.log("hello world");
+//create functions to ass warning styles when DELETE is selected.
 
 function warningOff() {
-
     //set the border to background colour
         const adminForm = document.getElementById("admin-form");
         adminForm.style.border = "2px solid var(--background)";
-
+    //hide the warning text
         const warning = document.getElementById("warning-text");
         warning.hidden = true;
-
+    //remove styles from the submit button
         const submitAdminForm = document.getElementById("submit-adminform");
         submitAdminForm.style.backgroundColor = "";
 }
+
 function warningOn() {
+    //set the border to red
         const adminForm = document.getElementById("admin-form");
         adminForm.style.border = "2px solid red";
-
+    //show the warning text
         const warning = document.getElementById("warning-text");
         warning.hidden = false;
-
+    //add red colour to submit button
         const submitAdminForm = document.getElementById("submit-adminform");
         submitAdminForm.style.backgroundColor = "var(--warningRed)";
-
 }
 
 const cabinItems = document.querySelectorAll(".cabin-item");
@@ -50,7 +50,7 @@ cabinItems.forEach(item => {
         let setCabinImage = document.getElementById("cabinimageupload");
         setCabinImage.src = `cabinimages/${cabinImage}`;
 
-         warningOff();
+        warningOff();
 
 
     });
@@ -63,7 +63,6 @@ const addNewCabin = document.getElementById("CRUDcabin");
 addNewCabin.addEventListener('change', function(){
     if( this.value === "CREATE" ) {
         
-        document.getElementById("CRUDcabin").value = "";
         document.getElementById("cabinid").value = "";
         document.getElementById("cabintype").value = "";
         document.getElementById("pricepernight").value = "";
@@ -75,13 +74,11 @@ addNewCabin.addEventListener('change', function(){
         warningOff();
 
     } else if( this.value === "DELETE" ) {
-
-        //set the border to red.
-
+        //turn on the warning styles
         warningOn();
        
     }else if( this.value === "UPDATE" ) {
-
+        //turn off the warning styles
         warningOff();
     }
 })
@@ -121,7 +118,6 @@ imageFile.addEventListener("change", function(){
 
 
 
-//unhide image in HTML and show selected image.
 
     
 

@@ -1,24 +1,22 @@
 <?php
 
 
-//on initial page load the form should be empty and offer to add a new Cabin
-//If a cabin is selected from the list, the form should be populated with the selected cabin data
-//when the form is submitted it should update the database to:
+//YES on initial page load the form should be empty and offer to add a new Cabin
+//YES If a cabin is selected from the list, the form should be populated with the selected cabin data
+//YES when the form is submitted it should update the database to:
     //CREATE
     //UPDATE
     //DELETE  a record
 
 
-//if add new cabin is selected then the form should be cleared.
-//when a cabin is selected to edit the photo should be shown. To do this add Javascript to change the image src attribute
+//YES if add new cabin is selected then the form should be cleared.
+//YES when a cabin is selected to edit the photo should be shown. To do this add Javascript to change the image src attribute
 
-    //tell POST it's an 'editcabin'
+   
 
-    //Tell the form which action it is to perform.
 
-    //if delete cabin is selected then add a red warning visual and warning text.
+    //YES if delete cabin is selected then add a red warning visual and warning text.
 
-    //Check the design
 
 
 
@@ -185,8 +183,8 @@
                 <option value="DELETE">Delete cabin</option>
             </select>
             <div>
-                <label for="cabinid">Cabin id: </label>
-                <input type="text" name="cabinid" id="cabinid">
+                <label hidden for="cabinid">Cabin id: </label>
+                <input hidden type="text" name="cabinid" id="cabinid">
             </div>
             <div>
                 <label for="cabintype">Cabin type: </label>

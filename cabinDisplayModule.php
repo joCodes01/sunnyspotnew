@@ -30,15 +30,23 @@ echo    "<li class='cabin-item'
             >";
 echo        "<div class='allcabins-grid' >";
 
+echo                "<div id='cabinTitle'>";
+echo                    "<h2 class='cabintype' >" . $row['cabinType'] . "</h2>";
+echo                    "<p hidden >Cabin id: " . $row['cabinID'] . "</p>";
+echo                "</div>";
+
+echo                "<div id='cabin-description'>" . "<h3>Cabin description: </h3>" . $row['cabinDescription'] . "</div>";
+
 echo            "<div class='cabinimage-container' >";
 echo                "<img class='cabinimage' src='cabinimages/" . $row['photo'] . "'>";
 echo            "</div>";
 
+
 echo            "<div class='cabin-container' >";
 // hidden cabin ID
-echo            "<p >Cabin id: " . $row['cabinID'] . "</p>";
-echo            "<h2 class='cabintype' >" . $row['cabinType'] . "</h2>" . "<br>" . "Cabin description: " . $row['cabinDescription'] . "<br><br>";
-echo            "<p class='price' >$" . $row['pricePerNight'] . " per night </p>     <p>$" . $row['pricePerWeek'] . " per week</p>";
+
+
+echo                "<div><p class='price' >$" . $row['pricePerNight'] . " per night </p>     <p>$" . $row['pricePerWeek'] . " per week</p></div>";
 echo            "</div >";
 
 echo        "</div>";
@@ -55,3 +63,5 @@ echo "</ul>";
 ?>
 
 <!-- id='" . $row['cabinID'] . "' -->
+
+<!-- "<h2 class='cabintype' >" . $row['cabinType'] . "</h2>" . -->
