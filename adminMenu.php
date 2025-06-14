@@ -220,7 +220,11 @@
                 </div>
 
             </div>
-            <input type="submit">
+            <div>
+            <input type="submit" id="submit-adminform">
+            <p  hidden id="warning-text">Permanently delete this cabin from the database.</p>
+            </div>
+            
             
         
         </form>

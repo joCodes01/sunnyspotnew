@@ -1,9 +1,18 @@
+
+/* set variabes */
+
+:root {
+    --background: lightgray;
+    --warningRed: rgb(181, 0, 0);
+    --grayButton: lightgray;
+}
+
+
 *{
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
-
 } 
 .pagecontent{
     margin-bottom: 5rem;
@@ -139,5 +148,15 @@ body{
     max-height: 110vh;
     overflow-y: auto;
     padding-bottom: 2rem;
+}
 
+#warning-text{
+    color: var(--warningRed);
+    font-weight: 800;
+    margin-top: .2rem;
+}
+
+#admin-form{
+    padding: 1rem;
+    border: 2px solid var(--background);
 }

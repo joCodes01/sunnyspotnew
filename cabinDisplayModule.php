@@ -26,7 +26,7 @@ echo    "<li class='cabin-item'
             data-description='" . htmlspecialchars($row['cabinDescription']) . "'
             data-price-night='" . htmlspecialchars($row['pricePerNight']) . "'
             data-price-week='" . htmlspecialchars($row['pricePerWeek']) . "'
-            data-photo='" . htmlspecialchars($row['photo']) . "'
+            data-cabin-image='" . htmlspecialchars($row['photo']) . "'
             >";
 echo        "<div class='allcabins-grid' >";
 
