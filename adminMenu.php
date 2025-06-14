@@ -24,6 +24,10 @@
     //sanitise form entry data.
 
 
+    //currently if the file alredy exists the response is- sorry, file already exists. 
+    //SET THE FILE THAT ALREADY EXISTS to the additional listing.
+
+
 //if the form has been submitted
  if($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -70,10 +74,13 @@
         }
 
         //check if the file already exists
-        if (file_exists($targetFile)) {
-            echo "Sorry this file already exists.";
-            $uploadOk = FALSE;
-        }
+        // if (file_exists($targetFile)) {
+        //     echo "Sorry this file already exists.";
+        //     $uploadOk = FALSE;
+
+        //     $cabinphoto = ($_FILES["cabinimage"]["name"]);
+        // }
+
         //check file size does not exceed 5MB
         if ($_FILES["cabinimage"]["size"] > 5000000) {
             echo "File is too large. 5MB allowed";
@@ -173,6 +180,11 @@
             <h2 class="admin-title">Choose action</h2>
             <form method="POST" id="admin-form" name="admin-form" enctype="multipart/form-data">
 
+        <!-- method="POST"(I've removed this from the form to use JS)-->
+
+
+
+
             <!-- identify if new or existing cabin -->
 
             <!-- TO DO hide the select and cabin ID-->
@@ -212,7 +224,7 @@
                 <div>
                     <?php
                         echo    "<div class='cabinimage-container' >";
-                        echo        "<img id='cabinimageupload' src=''>";
+                        echo        "<img id='cabinimageupload' src='cabinimages/testcabin.jpg'>";
                         echo     "</div>";
                     ?>
                 </div>
@@ -223,9 +235,8 @@
             <p  hidden id="warning-text">Permanently delete this cabin from the database.</p>
             </div>
             
-            
-        
         </form>
+        <div id="response-message"></div>
 
 
         </section>

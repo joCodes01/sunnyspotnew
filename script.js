@@ -117,7 +117,40 @@ imageFile.addEventListener("change", function(){
 });
 
 
+//TRY USING JAVASCRIPT
 
+// //add event listener to DOM content loaded
+// document.addEventListener('DOMContentLoaded', function() {
+
+//     //set variable for the admin form
+//     const form = document.getElementById("admin-form");
+//     //set a variable for the response message div
+//     const responseMessage = document.getElementById("response-message");
+
+
+//     //add event listner to the admin form on submit.
+//     form.addEventListener('submit', function(event) {
+//         //prevent the default behaviour of reloading the page on form submission.
+//         event.preventDefault();
+
+//         //get all of the form data including submitted files
+//         const adminFormData = new FormData(form);
+
+//         fetch("adminform-handler.php", { method: "POST", body: adminFormData})
+        
+//         .then(response=> response.text())
+//         .then(data=> { 
+//             console.log(data); })
+
+//         .catch(error => { 
+//             console.error("Error: " + error);
+//             responseMessage.innerText = "Something went wrong.";
+
+//          });
+
+
+//     });
+// });
 
     
 
