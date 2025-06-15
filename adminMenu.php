@@ -17,6 +17,8 @@
 
     //YES if delete cabin is selected then add a red warning visual and warning text.
 
+    //instead of adding php eror message, reverse hte logic check for SQL query and add javascript form validation
+
 
 
 
@@ -24,9 +26,8 @@
     //sanitise form entry data.
 
 
-    //currently if the file alredy exists the response is- sorry, file already exists. 
-    //SET THE FILE THAT ALREADY EXISTS to the additional listing.
-
+//set error message variable
+    $error_message = "";
 
 //if the form has been submitted
  if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -104,20 +105,30 @@
 
             //set the image file name
             $cabinphoto = $_FILES["cabinimage"]["name"];
-
         }
      
+    } 
+    else {
+        //if no file is uploaded then default to testcabin.jpg
+        $cabinphoto = "/testcabin.jpg";
     }
-
-
+    
 
     //if form is set to 'Add new cabin' ('CREATE'), submit the following SQL query to create a new record
     if($_POST['CRUDcabin'] == 'CREATE'){
+
+        if($price_per_week > ($price_per_night * 5)) {
+            //check the values against the SQL constraint that price per week must not be greater than 5 x price per night.
+            $error_message = "Price per week must not be highter than 5 x price per night."; 
+        
+        // if the data passes the check then send the SQL query to the database.
+        }else {
         include "dbconnect.php";
         $stmt = $conn->prepare("INSERT INTO Cabin (cabinType, cabinDescription, pricePerNight, pricePerWeek, photo) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssdds", $cabin_type, $description, $price_per_night, $price_per_week, $cabinphoto);
         $stmt->execute();
         $stmt->close();
+        }
     }
 
     //if form is set to 'Edit existing cabin' ('UPDATE'), submit the following SQL query to update the record
@@ -230,13 +241,21 @@
                 </div>
 
             </div>
+
+           
+            
+            <div id="php-error-message"><?php echo $error_message; ?></div>
+           
             <div>
             <input type="submit" id="submit-adminform">
             <p  hidden id="warning-text">Permanently delete this cabin from the database.</p>
             </div>
             
         </form>
+
         <div id="response-message"></div>
+
+       
 
 
         </section>

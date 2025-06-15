@@ -6,7 +6,7 @@ echo "
     </div>
     <ul class='navmenuitems'>
         <li><a href='allCabins.php'>Cabins</a></li>
-        <li><a>Contact</a></li>
+        <li><a href='contact.php'>Contact</a></li>
     </ul>
 </section>";
 

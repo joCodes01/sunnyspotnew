@@ -2,7 +2,10 @@
 
 echo 
 "<section class='footer'>
-<a class='stafflogin' href='adminMenu.php'>Staff login</a>
+<div>
+    <a class='stafflogin' href='login.php'>Staff login</a>
+    <a class='stafflogout' href='logout.php'>logout</a>
+</div>
 
 </section>";
 

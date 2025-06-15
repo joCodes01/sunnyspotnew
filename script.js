@@ -1,9 +1,12 @@
 
 //create functions to ass warning styles when DELETE is selected.
 
+
+const adminForm = document.getElementById("admin-form");
+
 function warningOff() {
     //set the border to background colour
-        const adminForm = document.getElementById("admin-form");
+        //const adminForm = document.getElementById("admin-form");
         adminForm.style.border = "2px solid var(--background)";
     //hide the warning text
         const warning = document.getElementById("warning-text");
@@ -15,7 +18,7 @@ function warningOff() {
 
 function warningOn() {
     //set the border to red
-        const adminForm = document.getElementById("admin-form");
+        //const adminForm = document.getElementById("admin-form");
         adminForm.style.border = "2px solid red";
     //show the warning text
         const warning = document.getElementById("warning-text");
@@ -24,6 +27,17 @@ function warningOn() {
         const submitAdminForm = document.getElementById("submit-adminform");
         submitAdminForm.style.backgroundColor = "var(--warningRed)";
 }
+
+
+//remove php warning when user interacts with the form
+
+// adminForm.addEventListener('change', function() {
+//     const phpErrorMessage = document.getElementById("php-error-message");
+//     if(phpErrorMessage) {
+//     phpErrorMessage.innerHTML = "";
+//     }
+// })
+
 
 const cabinItems = document.querySelectorAll(".cabin-item");
 
