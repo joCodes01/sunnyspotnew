@@ -1,30 +1,28 @@
 <?php
+session_start();
+//change hidden elements to type="hidden"
 
 
-//YES on initial page load the form should be empty and offer to add a new Cabin
-//YES If a cabin is selected from the list, the form should be populated with the selected cabin data
-//YES when the form is submitted it should update the database to:
-    //CREATE
-    //UPDATE
-    //DELETE  a record
+//check daniels tip on making a button as a form to create a warning for delete.
+
+//add response message modal when adding cabins to the database.
+    //add a message when there is an error for minus number constraints 
+    //add a message when there is an error for ppw higher than 5 x per night.
+    //add a message when cabin record added to the DB
+    //add a message when cabin record deleted
+    //add a message when cabin record updated
 
 
-//YES if add new cabin is selected then the form should be cleared.
-//YES when a cabin is selected to edit the photo should be shown. To do this add Javascript to change the image src attribute
+//focus on making the code easier to read
+//style website not to break when browser is scaled.
 
+
+//if the session login is not set to TRUE then re-direct to the login page    
+if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
    
-
-
-    //YES if delete cabin is selected then add a red warning visual and warning text.
-
-    //instead of adding php eror message, reverse hte logic check for SQL query and add javascript form validation
-
-
-
-
-    //prepare the statements
-    //sanitise form entry data.
-
+    header('Location: login.php');
+    exit();
+} 
 
 //set error message variable
     $error_message = "";
@@ -94,9 +92,6 @@
             $uploadOk = FALSE;
         }
 
-
-
-
         if ($uploadOk) {
             move_uploaded_file($_FILES["cabinimage"]["tmp_name"], $targetFile);
 
@@ -140,9 +135,6 @@
         $stmt->close();
     }
 
-
-
-
     //if form is set to 'Delete cabin' ('DELETE'), submit the following SQL query to delete the record
     if($_POST['CRUDcabin'] == 'DELETE') {
 
@@ -153,7 +145,6 @@
        $stmt->execute();
        $stmt->close();
         }
-
  }
 
  ?>
@@ -167,6 +158,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="validation.js" defer></script>
     <title>Administrative menu</title>
 </head>
 <body>
@@ -252,6 +244,15 @@
             </div>
             
         </form>
+
+        <!-- ERROR MODAL -->
+
+        <dialog id="error-modal">
+             <p id="error-message"></p>
+             <div>
+                <button id="close-modal">Close</button>
+            </div>
+        </dialog>
 
         <div id="response-message"></div>
 

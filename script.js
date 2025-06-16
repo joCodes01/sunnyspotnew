@@ -131,6 +131,11 @@ imageFile.addEventListener("change", function(){
 });
 
 
+
+
+
+
+
 //TRY USING JAVASCRIPT
 
 // //add event listener to DOM content loaded

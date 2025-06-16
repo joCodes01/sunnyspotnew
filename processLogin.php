@@ -2,6 +2,7 @@
 session_start();
 
 
+
 //TO DO
 //TO DO
 //hash the passwords
@@ -9,7 +10,9 @@ session_start();
 
 //write the SQL query 
 $login_error_message = "";
-$logged_in = "FALSE";
+
+//$logged_in = "FALSE";
+$_SESSION['logged_in'] = FALSE;
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -21,7 +24,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim(htmlspecialchars($sanitize_password));
 
 
-    
 
     //connect to tohe database
     include "dbconnect.php";
@@ -66,7 +68,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-
 
 }
 

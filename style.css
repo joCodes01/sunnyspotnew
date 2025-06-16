@@ -14,6 +14,22 @@
     font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 } 
+
+dialog{
+    margin-left: auto;
+    margin-right: 30%;
+    margin-top:50vh;
+    background-color: white;
+    border-radius: 5px;
+}
+#error-modal{
+    padding: 1rem;
+}
+#close-modal{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
 .pagecontent{
     margin-bottom: 5rem;
 }
