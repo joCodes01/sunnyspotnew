@@ -5,8 +5,6 @@ session_start();
 
 //TO DO
 //TO DO
-//hash the passwords
-//set session to logged in so user can stay logged in.
 
 //write the SQL query 
 $login_error_message = "";

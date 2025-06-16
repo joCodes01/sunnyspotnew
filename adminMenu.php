@@ -72,14 +72,6 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
             $uploadOk = FALSE;
         }
 
-        //check if the file already exists
-        // if (file_exists($targetFile)) {
-        //     echo "Sorry this file already exists.";
-        //     $uploadOk = FALSE;
-
-        //     $cabinphoto = ($_FILES["cabinimage"]["name"]);
-        // }
-
         //check file size does not exceed 5MB
         if ($_FILES["cabinimage"]["size"] > 5000000) {
             echo "File is too large. 5MB allowed";
@@ -122,6 +114,8 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
         $stmt = $conn->prepare("INSERT INTO Cabin (cabinType, cabinDescription, pricePerNight, pricePerWeek, photo) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssdds", $cabin_type, $description, $price_per_night, $price_per_week, $cabinphoto);
         $stmt->execute();
+        $_SESSION['response_message'] = "New cabin created.";
+        
         $stmt->close();
         }
     }
@@ -132,6 +126,8 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
         $stmt = $conn->prepare("UPDATE Cabin SET cabinType = ?, cabinDescription = ?, pricePerNight = ?, pricePerWeek = ?, photo = ? WHERE cabinID = ?");
         $stmt->bind_param("ssddsi", $cabin_type, $description, $price_per_night, $price_per_week, $cabinphoto, $cabinid);
         $stmt->execute();
+        $_SESSION['response_message'] = "Cabin updated.";
+
         $stmt->close();
     }
 
@@ -143,9 +139,28 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
        $stmt = $conn->prepare("DELETE FROM Cabin WHERE cabinID = ?");
        $stmt->bind_param("i", $cabinid);
        $stmt->execute();
+       $_SESSION['response_message'] = "Cabin record deleted.";
+
        $stmt->close();
         }
  }
+
+
+
+
+
+//SET UP A MESSAGE TO RESPOND TO CRUD ACTIONS
+
+
+// $response_message = $_SESSION['response_message'];
+// echo "response: " . $response_message;
+
+
+// if (isset($_SESSION['response_message'])) {
+
+
+
+
 
  ?>
 
