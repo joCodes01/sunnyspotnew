@@ -11,8 +11,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <?php include "navbar.php" ?>
    
     <section class="main-content">
-       <!-- <h1>Logout</h1> -->
+       <h1>Logout</h1>
         <form method="POST" action="">
             <div>
                 <input type="hidden" name="logout" value="logout">
@@ -34,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div>
                 <input type="submit" value="Logout of staff dashboard ">
             </div>
-        <form>
+        </form>
     </section>
 
     <!-- Add PHP footer here -->
@@ -42,5 +40,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 </body>
 </html>
-
-<!-- //add name to the logout input -->

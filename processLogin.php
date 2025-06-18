@@ -2,10 +2,6 @@
 session_start();
 
 
-
-//TO DO
-//TO DO
-
 //write the SQL query 
 $login_error_message = "";
 
@@ -23,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    //connect to tohe database
+    //connect to the database
     include "dbconnect.php";
     
     //prepare SQL query to check if user existe in the database
@@ -68,8 +64,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 
 }
-
-
-
 ?>
 

@@ -2,7 +2,7 @@
 /* set variabes */
 
 :root {
-    --background: lightgray;
+    --background: rgb(224, 225, 226);
     --warningRed: rgb(181, 0, 0);
     --grayButton: lightgray;
 }
@@ -14,7 +14,6 @@
     font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 } 
-
 dialog{
     margin-left: auto;
     margin-right: 30%;
@@ -30,9 +29,6 @@ dialog{
     margin-right: auto;
     margin-bottom: 1rem;
 }
-.pagecontent{
-    margin-bottom: 5rem;
-}
 .main-content{
     margin-left: auto;
     margin-right: auto;
@@ -44,14 +40,15 @@ dialog{
 .navbar{
     display: flex;  
     border-bottom: 1px solid gray;
-    padding:2rem;
+    padding: .5rem 2rem .5rem 2rem;
+    align-items: center;
 }
 a{
     text-decoration: none;
     color: black;
 }
 .navlogo{
-    max-width: 150px;  
+    max-width: 180px;  
 }
 .navmenuitems{
     display: flex;
@@ -64,7 +61,7 @@ a{
 body{
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: var(--background);
     max-width: 100%;
     font-size: .7rem;
     font-weight: 400;
@@ -90,24 +87,63 @@ body{
 .allcabins-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
- 
     background-color: white;
     filter: drop-shadow(2px 2px 2px #909090);
     margin-top: 2rem;
-    max-width: 60%;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto; 
     overflow:  hidden;
     padding: 1rem;
 }
+.main-content h1{
+    text-align: center;
+}
 
+/* Admin menu page content styles */
+
+.adminmenu-pagecontent {
+    min-width: 200px;
+}
+.adminmenu-pagecontent .cabin-list {
+    max-width: 80%;
+    min-width: 180px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.pagecontent{
+    margin-bottom: 5rem;
+}
+
+/* All cabins page content styles */
+
+.allcabins-pagecontent h1 {
+    margin-top: 3rem;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.allcabins-pagecontent .cabin-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.allcabins-pagecontent  .allcabins-grid{
+    height: 100%;
+    min-width: 200px;
+}
+.cabin-item {
+    list-style: none;
+}
 .cabinimage-container{
     display: flex;
     justify-content: center;
     padding: .5rem;
 }
-
 .cabinimage{
     width: 100%;
     margin-top: auto;
@@ -115,14 +151,12 @@ body{
 }
 #cabinimageupload{
     width: 100%;
-    /* max-width: 100px; */
     min-width: 100px;
     height: auto;
     display: block;
     margin-top: auto;
     margin-bottom: auto;   
 }
-
 .cabin-container{
     padding: 1rem;
 } 
@@ -131,7 +165,6 @@ body{
     font-weight: 700;
     margin-bottom: .5rem;
 }
-
 #cabinTitle{
     grid-column: 1/3;
 }
@@ -139,7 +172,6 @@ body{
     font-size: .8rem;
     margin-bottom: .3rem;
 }
-
 #cabin-description {
 grid-column: 1/3;
 margin-top: .3rem;
@@ -152,10 +184,10 @@ margin-top: .3rem;
 }
 
 /* Admin */
+
 .admin-title{
     margin-left: 1rem;
 }
-
 .admin-grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -164,7 +196,6 @@ margin-top: .3rem;
     padding: 2rem;
 }
 .admin-content div{
-    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
@@ -184,27 +215,24 @@ margin-top: .3rem;
 #tester {
     background-color: pink;
 }
-
 .admin-grid-container .pagecontent {
-    /* border: 1px solid red; */
     max-height: 110vh;
     overflow-y: auto;
     padding-bottom: 2rem;
 }
-
 #warning-text {
     color: var(--warningRed);
     font-weight: 800;
     margin-top: .2rem;
 }
-
-
-
+.response-message p {
+    font-size: 3rem;
+    color: red;
+}
 #admin-form{
     padding: 1rem;
     border: 2px solid var(--background);
 }
-
 textarea {
     padding: .5rem;
 }

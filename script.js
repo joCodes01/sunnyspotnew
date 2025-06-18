@@ -1,7 +1,3 @@
-
-//create functions to ass warning styles when DELETE is selected.
-
-
 const adminForm = document.getElementById("admin-form");
 
 function warningOff() {
@@ -27,17 +23,6 @@ function warningOn() {
         const submitAdminForm = document.getElementById("submit-adminform");
         submitAdminForm.style.backgroundColor = "var(--warningRed)";
 }
-
-
-//remove php warning when user interacts with the form
-
-// adminForm.addEventListener('change', function() {
-//     const phpErrorMessage = document.getElementById("php-error-message");
-//     if(phpErrorMessage) {
-//     phpErrorMessage.innerHTML = "";
-//     }
-// })
-
 
 const cabinItems = document.querySelectorAll(".cabin-item");
 
@@ -65,11 +50,9 @@ cabinItems.forEach(item => {
         setCabinImage.src = `cabinimages/${cabinImage}`;
 
         warningOff();
-
-
     });
-
 });
+
 //get the CRUD setting form input
 const addNewCabin = document.getElementById("CRUDcabin");
 
@@ -108,7 +91,7 @@ imageFile.addEventListener("change", function(){
     //get the first file
     const image = imageFile.files[0];
 
-    //if thre is a file selected
+    //if there is a file selected
     if (image) {
 
         //create a file reader
@@ -129,49 +112,5 @@ imageFile.addEventListener("change", function(){
         reader.readAsDataURL(image);
     };
 });
-
-
-
-
-
-
-
-//TRY USING JAVASCRIPT
-
-// //add event listener to DOM content loaded
-// document.addEventListener('DOMContentLoaded', function() {
-
-//     //set variable for the admin form
-//     const form = document.getElementById("admin-form");
-//     //set a variable for the response message div
-//     const responseMessage = document.getElementById("response-message");
-
-
-//     //add event listner to the admin form on submit.
-//     form.addEventListener('submit', function(event) {
-//         //prevent the default behaviour of reloading the page on form submission.
-//         event.preventDefault();
-
-//         //get all of the form data including submitted files
-//         const adminFormData = new FormData(form);
-
-//         fetch("adminform-handler.php", { method: "POST", body: adminFormData})
-        
-//         .then(response=> response.text())
-//         .then(data=> { 
-//             console.log(data); })
-
-//         .catch(error => { 
-//             console.error("Error: " + error);
-//             responseMessage.innerText = "Something went wrong.";
-
-//          });
-
-
-//     });
-// });
-
-    
-
 
 

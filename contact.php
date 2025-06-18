@@ -11,7 +11,8 @@
     <?php include "navbar.php" ?>
    
     <section class="main-content">
-        <!-- <h1>Contact us at Sunny Spot Holidays</h1> -->
+        <h1>Come and see us at Sunny Spot Holidays office.</h1>
+        
     </section>
 
     <!-- Add PHP footer here -->

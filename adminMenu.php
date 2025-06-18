@@ -5,16 +5,11 @@ session_start();
 
 //check daniels tip on making a button as a form to create a warning for delete.
 
-//add response message modal when adding cabins to the database.
-    //add a message when there is an error for minus number constraints 
-    //add a message when there is an error for ppw higher than 5 x per night.
-    //add a message when cabin record added to the DB
-    //add a message when cabin record deleted
-    //add a message when cabin record updated
 
+   
+//Add - if ima
 
 //focus on making the code easier to read
-//style website not to break when browser is scaled.
 
 
 //if the session login is not set to TRUE then re-direct to the login page    
@@ -26,6 +21,8 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
 
 //set error message variable
     $error_message = "";
+//set the response message variable
+    $_SESSION['response_message'] = "";
 
 //if the form has been submitted
  if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -100,6 +97,9 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
         $cabinphoto = "/testcabin.jpg";
     }
     
+    
+
+    
 
     //if form is set to 'Add new cabin' ('CREATE'), submit the following SQL query to create a new record
     if($_POST['CRUDcabin'] == 'CREATE'){
@@ -146,22 +146,6 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
  }
 
 
-
-
-
-//SET UP A MESSAGE TO RESPOND TO CRUD ACTIONS
-
-
-// $response_message = $_SESSION['response_message'];
-// echo "response: " . $response_message;
-
-
-// if (isset($_SESSION['response_message'])) {
-
-
-
-
-
  ?>
 
 <!-- HTML -->
@@ -177,15 +161,13 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
     <title>Administrative menu</title>
 </head>
 <body>
+
     <?php include "navbar.php" ?>
-
-
-   
 
     <div class="admin-grid-container">
       
         <!-- CABIN DISPLAY MODULE -->
-        <section class="pagecontent">
+        <section class="pagecontent adminmenu-pagecontent">
             <h2 id="editcabin-title">Select cabin to edit</h2>
 
             <?php include "cabinDisplayModule.php" ?>
@@ -198,15 +180,10 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
             <h2 class="admin-title">Choose action</h2>
             <form method="POST" id="admin-form" name="admin-form" enctype="multipart/form-data">
 
-        <!-- method="POST"(I've removed this from the form to use JS)-->
-
-
-
+        
 
             <!-- identify if new or existing cabin -->
 
-            <!-- TO DO hide the select and cabin ID-->
-            <!-- TO DO hide the select and cabin ID-->
             <select  id="CRUDcabin" name="CRUDcabin">
                 <option value="CREATE" selected>Add new cabin</option>
                 <option value="UPDATE">Edit existing cabin</option>
@@ -239,19 +216,20 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
                     <label for="cabinimage" class="bold-label">Cabin image</label>
                     <input type="file" id="cabinimage" name="cabinimage" accept=".png, .jpg, .jpeg, .gif">
                 </div>
-                <div>
-                    <?php
-                        echo    "<div class='cabinimage-container' >";
-                        echo        "<img id='cabinimageupload' src='cabinimages/testcabin.jpg'>";
-                        echo     "</div>";
-                    ?>
+                
+                    
+                <div class='cabinimage-container' >
+                    <img id='cabinimageupload' src='cabinimages/testcabin.jpg'>
                 </div>
-
             </div>
 
            
             
             <div id="php-error-message"><?php echo $error_message; ?></div>
+             
+            <div id="response-message">
+                <?php echo "<p>" . $_SESSION['response_message'] . "</p>";?>
+            </div>
            
             <div>
             <input type="submit" id="submit-adminform">
@@ -269,7 +247,7 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
             </div>
         </dialog>
 
-        <div id="response-message"></div>
+       
 
        
 

@@ -10,7 +10,8 @@
     <!-- include PHP navigation here -->
     <?php include "navbar.php" ?>
    
-    <section class="pagecontent">
+    <section class="pagecontent allcabins-pagecontent">
+        <h1>Rental Cabins</h1>
 
         <?php include "cabinDisplayModule.php" ?>
 
