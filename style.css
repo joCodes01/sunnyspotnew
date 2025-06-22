@@ -14,6 +14,14 @@
     font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 } 
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    max-width: 100%;
+    font-size: .7rem;
+    font-weight: 400;
+}
 dialog{
     margin-left: auto;
     margin-right: 30%;
@@ -58,14 +66,7 @@ a{
     list-style: none;
     margin-left: 1.5rem;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background);
-    max-width: 100%;
-    font-size: .7rem;
-    font-weight: 400;
-}
+
 .footer{
     position:fixed;  
     bottom: 0px;
@@ -100,42 +101,12 @@ body{
     text-align: center;
 }
 
-/* Admin menu page content styles */
 
-.adminmenu-pagecontent {
-    min-width: 200px;
-}
-.adminmenu-pagecontent .cabin-list {
-    max-width: 80%;
-    min-width: 180px;
-    margin-left: auto;
-    margin-right: auto; 
-}
-.pagecontent{
-    margin-bottom: 5rem;
-}
 
-/* All cabins page content styles */
 
-.allcabins-pagecontent h1 {
-    margin-top: 3rem;
-    margin-bottom: 1.8rem;
-    text-align: center;
-    font-size: 1.5rem;
-}
 
-.allcabins-pagecontent .cabin-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    max-width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.allcabins-pagecontent  .allcabins-grid{
-    height: 100%;
-    min-width: 200px;
-}
+/* Cabin module styles */
+
 .cabin-item {
     list-style: none;
 }
@@ -181,18 +152,90 @@ margin-top: .3rem;
 .price{
     margin-top: 1rem;
 }
-.db-message{
-    padding-left: 2rem;
+
+
+
+/* All cabins page content styles */
+
+.allcabins-pagecontent h1 {
+    margin-top: 3rem;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    font-size: 1.5rem;
 }
+.allcabins-pagecontent .cabin-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.allcabins-pagecontent  .allcabins-grid{
+    height: 100%;
+    min-width: 200px;
+}
+
+@media screen and (max-width: 916px ) {
+
+    .allcabins-pagecontent .cabin-list {
+        max-width: 85%;
+    }
+}
+
+
+@media screen and (max-width: 714px) {
+    .allcabins-pagecontent .cabin-list {
+    
+        grid-template-columns: 1fr 1fr;
+  
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .allcabins-pagecontent .cabin-list {
+    
+        grid-template-columns: 1fr;
+  
+    }
+    .allcabins-pagecontent .cabin-list {
+        max-width: 70%;
+
+    }
+}
+
+
+/* Admin menu page content styles */
+
+.adminmenu-pagecontent {
+    min-width: 200px;
+}
+.adminmenu-pagecontent .cabin-list {
+    max-width: 80%;
+    min-width: 180px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.pagecontent{
+    margin-bottom: 5rem;
+}
+
+
 
 /* Admin */
 
+
+
+.db-message{
+    padding-left: 2rem;
+}
 .admin-title{
     margin-left: 1rem;
 }
 .admin-grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* max-width: 100%; */
 }
 .admin-content{
     padding: 2rem;
@@ -210,6 +253,17 @@ margin-top: .3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+@media screen and (max-width: 780px){
+    #admin-image-grid{
+    grid-template-columns: 1fr;
+    }
+    .admin-content{
+        padding: 2rem 0.5rem;
+    }
+}
+
+
 #editcabin-title{
     margin-left: 2rem;
     margin-top: 2rem;

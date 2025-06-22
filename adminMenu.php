@@ -211,6 +211,7 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
             </div>
 
             <!-- Image upload -->
+            
             <div id="admin-image-grid">
                 <div>
                     <label for="cabinimage" class="bold-label">Cabin image</label>
@@ -222,6 +223,7 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== TRUE)  {
                     <img id='cabinimageupload' src='cabinimages/testcabin.jpg'>
                 </div>
             </div>
+            
 
            
             
