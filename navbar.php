@@ -11,7 +11,7 @@ if ($currentpage != 'login.php' && $currentpage != 'logout.php' ) {
             </a>
         </div>
         <ul class='navmenuitems'>
-            <li><a href='allCabins.php'>Cabins</a></li>
+            <li id='margin-left-auto'><a href='allCabins.php'>Cabins</a></li>
             <li><a href='contact.php'>Contact</a></li>
         </ul>
     </div>";
@@ -23,8 +23,8 @@ if ($currentpage != 'login.php' && $currentpage != 'logout.php' ) {
                 <img class='navlogo' src='../images/LOGO_sunnyspot.png' alt='image of rental cabin'>
             </a>
         </div>
-        <ul class='navmenuitems'>
-            <li><a href='../allCabins.php'>Cabins</a></li>
+        <ul class='navmenuitems' >
+            <li id='margin-left-auto'><a href='../allCabins.php'>Cabins</a></li>
             <li><a href='../contact.php'>Contact</a></li>
         </ul>
     </div>";

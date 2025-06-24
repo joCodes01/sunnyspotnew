@@ -11,7 +11,7 @@
     <?php include "navbar.php" ?>
    
     <section class="main-content">
-        <h1>Come and see us at Sunny Spot Holidays office.</h1>
+        <h1>Come and see us at the Sunny Spot Holidays office.</h1>
         
     </section>
 

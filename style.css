@@ -1,6 +1,5 @@
 
 /* set variabes */
-
 :root {
     --background: rgb(224, 225, 226);
     --warningRed: rgb(181, 0, 0);
@@ -8,12 +7,14 @@
 }
 
 
-*{
+*, *::before, *::after{
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 } 
+
+
 body{
     display: flex;
     flex-direction: column;
@@ -48,8 +49,19 @@ dialog{
 .navbar{
     display: flex;  
     border-bottom: 1px solid gray;
-    padding: .5rem 2rem .5rem 2rem;
+    padding: .5rem 2rem;
     align-items: center;
+}
+@media screen and (max-width: 380px){
+    .navbar{
+        display: block;  
+    }
+    .navmenuitems{
+        margin-top: 0.5rem;
+    }
+    .navbar {
+        padding: .5rem;
+    }
 }
 a{
     text-decoration: none;
@@ -64,9 +76,11 @@ a{
 }
 .navmenuitems li{
     list-style: none;
-    margin-left: 1.5rem;
+    margin-left: 1.5rem; 
 }
-
+#margin-left-auto{
+    margin-left: auto; 
+}
 .footer{
     position:fixed;  
     bottom: 0px;
@@ -146,8 +160,8 @@ a{
     margin-bottom: .3rem;
 }
 #cabin-description {
-grid-column: 1/3;
-margin-top: .3rem;
+    grid-column: 1/3;
+    margin-top: .3rem;
 }
 .price{
     margin-top: 1rem;
@@ -175,23 +189,18 @@ margin-top: .3rem;
     height: 100%;
     min-width: 200px;
 }
-
 @media screen and (max-width: 916px ) {
 
     .allcabins-pagecontent .cabin-list {
         max-width: 85%;
     }
 }
-
-
 @media screen and (max-width: 714px) {
     .allcabins-pagecontent .cabin-list {
     
         grid-template-columns: 1fr 1fr;
-  
     }
 }
-
 @media screen and (max-width: 480px) {
     .allcabins-pagecontent .cabin-list {
     
@@ -223,8 +232,6 @@ margin-top: .3rem;
 
 
 /* Admin */
-
-
 
 .db-message{
     padding-left: 2rem;
