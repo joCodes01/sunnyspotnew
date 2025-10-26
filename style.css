@@ -52,17 +52,6 @@ dialog{
     padding: .5rem 2rem;
     align-items: center;
 }
-@media screen and (max-width: 380px){
-    .navbar{
-        display: block;  
-    }
-    .navmenuitems{
-        margin-top: 0.5rem;
-    }
-    .navbar {
-        padding: .5rem;
-    }
-}
 a{
     text-decoration: none;
     color: black;
@@ -114,8 +103,6 @@ a{
 .main-content h1{
     text-align: center;
 }
-
-
 
 
 
@@ -189,29 +176,7 @@ a{
     height: 100%;
     min-width: 200px;
 }
-@media screen and (max-width: 916px ) {
 
-    .allcabins-pagecontent .cabin-list {
-        max-width: 85%;
-    }
-}
-@media screen and (max-width: 714px) {
-    .allcabins-pagecontent .cabin-list {
-    
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media screen and (max-width: 480px) {
-    .allcabins-pagecontent .cabin-list {
-    
-        grid-template-columns: 1fr;
-  
-    }
-    .allcabins-pagecontent .cabin-list {
-        max-width: 70%;
-
-    }
-}
 
 
 /* Admin menu page content styles */
@@ -260,17 +225,6 @@ a{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-
-@media screen and (max-width: 780px){
-    #admin-image-grid{
-    grid-template-columns: 1fr;
-    }
-    .admin-content{
-        padding: 2rem 0.5rem;
-    }
-}
-
-
 #editcabin-title{
     margin-left: 2rem;
     margin-top: 2rem;
@@ -299,9 +253,8 @@ a{
 textarea {
     padding: .5rem;
 }
-input{
-    padding: .2rem;
-    padding-left: .5rem;
+#cabinimage{
+    padding: .2rem 0rem; 
 }
 select{
     padding: .2rem;
@@ -331,4 +284,87 @@ select{
     display: flex;
     flex-direction: column;
     margin: .3rem;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 916px ) {
+
+    .allcabins-pagecontent .cabin-list {
+        max-width: 85%;
+    }
+}
+@media screen and (max-width: 780px){
+    #admin-image-grid{
+    grid-template-columns: 1fr;
+    }
+    .admin-content{
+        padding: 2rem 0.5rem;
+    }
+}
+@media screen and (max-width: 714px) {
+    .allcabins-pagecontent .cabin-list {
+    
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 500px){
+    #admin-form {
+        max-width: 185px;  
+    }
+    #admin-image-grid img{
+        background-color: pink;
+        max-width: 148px;
+    }
+    .cabinimage-container{
+        padding: 0;
+    }
+    #cabinimage{
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    .allcabins-pagecontent .cabin-list {
+    
+        grid-template-columns: 1fr;
+    }
+    .allcabins-pagecontent .cabin-list {
+        max-width: 70%;
+
+    }
+}
+@media screen and (max-width: 380px){
+    .navbar{
+        display: block;  
+    }
+    .navmenuitems{
+        margin-top: 0.5rem;
+    }
+    .navbar {
+        padding: .5rem;
+    }
+   
+}
+
+.gotologinitems {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.gotologinitems p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: .8rem;
+    font-weight: bold;
+}
+* {
+    
 }
