@@ -287,11 +287,38 @@ select{
 }
 
 
+/* index page */
+.logo-container {
+    margin: 1rem;
+}
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80%;
+    margin: 3rem auto 0 auto;
+    gap: 1rem;
+}
+.screenshot-grid img{
+    border: .5px solid grey;
+    box-shadow: 5px 5px 10px#888888;
+    min-width: 300px;
+}
+.indexpage> h1, p {
+    text-align: center;
+}
+.indexpage h1{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.indexpage>p {
+    margin-bottom: .5rem;
+}
 
-
-
-
-
+@media screen and (max-width: 1020px ) {
+       .screenshot-grid {
+    grid-template-columns: 1fr 1fr;
+    }
+}
 @media screen and (max-width: 916px ) {
 
     .allcabins-pagecontent .cabin-list {
@@ -311,7 +338,9 @@ select{
     
         grid-template-columns: 1fr 1fr;
     }
-}
+    .screenshot-grid {
+    grid-template-columns: 1fr;
+    }
 @media screen and (max-width: 500px){
     #admin-form {
         max-width: 185px;  
@@ -348,23 +377,4 @@ select{
         padding: .5rem;
     }
    
-}
-
-.gotologinitems {
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    
-}
-
-.gotologinitems p {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: .8rem;
-    font-weight: bold;
-}
-* {
-    
-}
+} }
